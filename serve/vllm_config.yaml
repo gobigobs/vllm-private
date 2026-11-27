@@ -1,0 +1,14 @@
+# vLLM serving config — one place to change model / limits / logging.
+# Used as documentation for serve/vllm_serve.sh and docker-compose.yml
+# (vLLM's CLI flags are the source of truth; keep them in sync).
+
+model: Qwen/Qwen2.5-3B-Instruct        # Apache 2.0, open-weight, ~6 GB bf16
+host: 127.0.0.1                         # loopback only — never 0.0.0.0
+port: 8000
+api_key: ${VLLM_API_KEY}                # from env file, never committed
+max_model_len: 4096
+gpu_memory_utilization: 0.90
+enable_prefix_caching: true
+log_requests: true                      # request metadata; keep prompt logging off for user data
+# GPU minimum (honest): >= 8 GB VRAM to load the 3B model + KV cache;
+# 12 GB+ (e.g. T4 16 GB) recommended for comfortable concurrency.

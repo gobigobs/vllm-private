@@ -1,0 +1,22 @@
+# systemd unit for vLLM — GPU host.
+#   sudo cp serve/vllm.service /etc/systemd/system/vllm.service
+#   sudo mkdir -p /etc/vllm && printf 'VLLM_API_KEY=<secret>\n' | sudo tee /etc/vllm/env
+#   sudo systemctl enable --now vllm
+[Unit]
+Description=vLLM OpenAI-compatible server (private network only)
+After=network.target
+
+[Service]
+Type=simple
+User=vllm
+WorkingDirectory=/opt/vllm-private
+EnvironmentFile=/etc/vllm/env
+ExecStart=/opt/vllm-private/serve/vllm_serve.sh
+Restart=on-failure
+RestartSec=10
+# Hardening: no public exposure is enforced by binding 127.0.0.1 in the script.
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

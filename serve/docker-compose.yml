@@ -1,0 +1,41 @@
+# vLLM in Docker — GPU host, private network only.
+#   docker compose -f serve/docker-compose.yml up -d
+# The API key comes from serve/.env (VLLM_API_KEY=...), which is git-ignored.
+# The container publishes 127.0.0.1:8000 only — nothing on a public interface.
+services:
+  vllm:
+    image: vllm/vllm-openai:v0.9.2
+    container_name: vllm-private
+    restart: unless-stopped
+    runtime: nvidia
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+    command: >
+      --model Qwen/Qwen2.5-3B-Instruct
+      --host 0.0.0.0
+      --port 8000
+      --api-key ${VLLM_API_KEY}
+      --max-model-len 4096
+      --gpu-memory-utilization 0.90
+      --enable-prefix-caching
+      --log-requests
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - hf-cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - private
+
+volumes:
+  hf-cache:
+
+networks:
+  private:
+    internal: true   # no route to the internet from the container network

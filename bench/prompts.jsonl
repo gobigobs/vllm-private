@@ -1,0 +1,8 @@
+{"prompt": "What is the capital of France? Answer in one sentence."}
+{"prompt": "Explain what a GPU is in two sentences, for a non-technical reader."}
+{"prompt": "Write a one-line Python function that returns the square of a number."}
+{"prompt": "List three benefits of running an LLM on your own server instead of a hosted API."}
+{"prompt": "What is 17 multiplied by 6? Show the working in one line."}
+{"prompt": "Summarize this in one sentence: A private VPC keeps model traffic off the public internet, so prompts and completions never leave the company's network."}
+{"prompt": "Give one tip for keeping a server secure, in one sentence."}
+{"prompt": "Translate 'thank you very much' into Tamil transliteration (Tanglish), one line."}

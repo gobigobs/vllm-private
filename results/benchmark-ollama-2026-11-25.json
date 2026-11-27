@@ -1,0 +1,169 @@
+{
+  "summary": {
+    "endpoint": "http://127.0.0.1:11434/v1",
+    "model": "qwen2.5:3b-instruct",
+    "n_requests": 8,
+    "n_succeeded": 8,
+    "n_failed": 0,
+    "concurrency": 1,
+    "max_tokens": 128,
+    "wall_s": 73.99,
+    "ttft_s": {
+      "mean": 0.797,
+      "p50": 0.393,
+      "p95": 1.894
+    },
+    "output_tokens_per_s_per_request": {
+      "mean": 4.58
+    },
+    "latency_s": {
+      "mean": 9.249,
+      "p50": 5.889,
+      "p95": 24.213,
+      "p99": 29.17
+    },
+    "throughput_req_per_min": 6.49,
+    "throughput_output_tokens_per_s": 4.16,
+    "total_output_tokens": 308,
+    "tokens_estimated": false,
+    "streamed": true
+  },
+  "requests": [
+    {
+      "prompt": "What is the capital of France? Answer in one sentence.",
+      "ok": true,
+      "streamed": true,
+      "ttft_s": 1.180068059000405,
+      "latency_s": 2.8911985459999414,
+      "text": "The capital of France is Paris.",
+      "usage": {
+        "prompt_tokens": 41,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        },
+        "completion_tokens": 8,
+        "total_tokens": 49
+      },
+      "estimated_tokens": 7
+    },
+    {
+      "prompt": "Explain what a GPU is in two sentences, for a non-technical reader.",
+      "ok": true,
+      "streamed": true,
+      "ttft_s": 2.0998231609992217,
+      "latency_s": 12.708168843999374,
+      "text": "A GPU, or Graphics Processing Unit, is like a super-fast helper in your computer that's really good at doing many calculations at the same time. It's used for making games look really smooth and for doing other types of complex calculations really quickly.",
+      "usage": {
+        "prompt_tokens": 46,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        },
+        "completion_tokens": 51,
+        "total_tokens": 97
+      },
+      "estimated_tokens": 50
+    },
+    {
+      "prompt": "Write a one-line Python function that returns the square of a number.",
+      "ok": true,
+      "streamed": true,
+      "ttft_s": 0.2739295649998894,
+      "latency_s": 6.888401000000158,
+      "text": "Certainly! Here's a one-line Python function that returns the square of a number:\n\n```python\nsquare = lambda x: x ** 2\n```",
+      "usage": {
+        "prompt_tokens": 43,
+        "prompt_tokens_details": {
+          "cached_tokens": 42
+        },
+        "completion_tokens": 32,
+        "total_tokens": 75
+      },
+      "estimated_tokens": 31
+    },
+    {
+      "prompt": "List three benefits of running an LLM on your own server instead of a hosted API.",
+      "ok": true,
+      "streamed": true,
+      "ttft_s": 1.5129518789999565,
+      "latency_s": 30.408666522999738,
+      "text": "Running a Large Language Model (LLM) on your own server offers several benefits compared to using a hosted API. Here are three key advantages:\n\n1. **Data Privacy and Control**: When you run your own LLM on your server, you have full control over the data that is processed and stored. This allows you to maintain strict privacy and security protocols, ensuring that sensitive information is not exposed to third-party servers. You can also tailor the data processing pipeline to better suit your specific needs, such as integrating with other internal systems or customizing the model's training data.\n\n2. **Customization and Integration**: Having your LLM on",
+      "usage": {
+        "prompt_tokens": 47,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        },
+        "completion_tokens": 128,
+        "total_tokens": 175
+      },
+      "estimated_tokens": 128
+    },
+    {
+      "prompt": "What is 17 multiplied by 6? Show the working in one line.",
+      "ok": true,
+      "streamed": true,
+      "ttft_s": 0.20939796499988006,
+      "latency_s": 6.197396794000269,
+      "text": "17 multiplied by 6 is 102. Working: \\(17 \\times 6 = 102\\)",
+      "usage": {
+        "prompt_tokens": 46,
+        "prompt_tokens_details": {
+          "cached_tokens": 45
+        },
+        "completion_tokens": 28,
+        "total_tokens": 74
+      },
+      "estimated_tokens": 27
+    },
+    {
+      "prompt": "Summarize this in one sentence: A private VPC keeps model traffic off the public internet, so prompts and completions never leave the company's network.",
+      "ok": true,
+      "streamed": true,
+      "ttft_s": 0.39644570800010115,
+      "latency_s": 5.5811885150005764,
+      "text": "A private VPC isolates model traffic within a company's network, ensuring that prompts and completions never leave the internal network.",
+      "usage": {
+        "prompt_tokens": 61,
+        "prompt_tokens_details": {
+          "cached_tokens": 60
+        },
+        "completion_tokens": 27,
+        "total_tokens": 88
+      },
+      "estimated_tokens": 26
+    },
+    {
+      "prompt": "Give one tip for keeping a server secure, in one sentence.",
+      "ok": true,
+      "streamed": true,
+      "ttft_s": 0.30958134299999074,
+      "latency_s": 5.005488048000188,
+      "text": "Ensure your server is regularly updated and patched to protect against known vulnerabilities.",
+      "usage": {
+        "prompt_tokens": 42,
+        "prompt_tokens_details": {
+          "cached_tokens": 41
+        },
+        "completion_tokens": 15,
+        "total_tokens": 57
+      },
+      "estimated_tokens": 14
+    },
+    {
+      "prompt": "Translate 'thank you very much' into Tamil transliteration (Tanglish), one line.",
+      "ok": true,
+      "streamed": true,
+      "ttft_s": 0.3904757549998976,
+      "latency_s": 4.309012495000388,
+      "text": "\u0ba8\u0ba9\u0bcd\u0bb1\u0bbf \u0bae\u0bbf\u0b95\u0bae\u0bcd \u0bae\u0bbf\u0b95\u0bae\u0bcd",
+      "usage": {
+        "prompt_tokens": 48,
+        "prompt_tokens_details": {
+          "cached_tokens": 47
+        },
+        "completion_tokens": 19,
+        "total_tokens": 67
+      },
+      "estimated_tokens": 12
+    }
+  ]
+}
